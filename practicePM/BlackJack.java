@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class BlackJackTask11 {
+public class BlackJack {
 
     static List<String> decks = new ArrayList<>();
 
@@ -97,9 +97,11 @@ public class BlackJackTask11 {
 
             if (rank.equals("J") || rank.equals("Q") || rank.equals("K")) {
                 points += 10;
-            } else if (rank.equals("A") && hand.size() < 3) {
+            } else if (rank.equals("A") && hand.size() == 2) {
                 points += 11;
-            } else if (rank.equals("A") && hand.size() > 2) {
+            } else if (rank.equals("A") && hand.size() == 3) {
+                points += 1;
+            } else if (rank.equals("A") && hand.size() > 3) {
                 points += 1;
             } else {
                 points += Integer.parseInt(rank);
